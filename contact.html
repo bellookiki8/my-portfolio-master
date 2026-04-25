@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Okikioluwa Bello</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161d;
+    --surface2: #1a1e28;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8eaf0;
+    --muted: #7a8096;
+    --accent: #00d4a8;
+    --accent2: #0094ff;
+    --accent3: #ff6b35;
+    --bg-light: #f4f5f7;
+    --surface-light: #ffffff;
+    --text-dark: #1a1e28;
+    --muted-dark: #4a5068;
+    --border-light: rgba(0,0,0,0.08);
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(13,15,20,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  /* HERO (dark) */
+  .hero {
+    min-height: 45vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 8rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-inner { width: 100%; }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+
+  h1 span { color: var(--accent); font-weight: 500; }
+
+  .hero-sub {
+    margin-top: 1rem;
+    font-size: 16px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 520px;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  /* DIVIDER — gradient transition */
+  .divider {
+    height: 3px;
+    background: linear-gradient(to bottom, var(--surface), #e0e2e8);
+    margin: 0;
+  }
+
+  /* LIGHT BODY */
+  .contact-body {
+    background: var(--bg-light);
+    padding: 5rem 2rem 6rem;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* LEFT — info */
+  .info-block { position: sticky; top: 100px; }
+
+  .info-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .info-label::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .info-block h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .info-block p {
+    font-size: 14px;
+    color: var(--muted-dark);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+    background: var(--surface-light);
+    border: 1px solid var(--border-light);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 13px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    min-width: 60px;
+  }
+
+  /* Availability pill */
+  .avail-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    background: rgba(0,212,168,0.08);
+    border: 1px solid rgba(0,212,168,0.25);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* RIGHT — form */
+  .form-card {
+    background: var(--surface-light);
+    border: 1px solid var(--border-light);
+    padding: 2.5rem;
+  }
+
+  .form-header {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted-dark);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-header-dots { display: flex; gap: 5px; }
+  .fdot { width: 8px; height: 8px; border-radius: 50%; }
+  .fdot-r { background: #ffbd2e; }
+  .fdot-y { background: #28c941; }
+  .fdot-g { background: #ff5f57; }
+
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 0.7rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,212,168,0.12);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #b0b4c4;
+    font-weight: 300;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.7;
+  }
+
+  select { cursor: pointer; background-image: none; }
+
+  .form-note {
+    font-size: 12px;
+    color: var(--muted-dark);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #0d0f14;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .btn-submit:hover { opacity: 0.88; }
+  .btn-submit:active { transform: scale(0.99); }
+
+  /* Success state */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .success-icon {
+    width: 48px; height: 48px;
+    background: rgba(0,212,168,0.1);
+    border: 1px solid rgba(0,212,168,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 20px;
+  }
+
+  .success-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .success-sub {
+    font-size: 13px;
+    color: var(--muted-dark);
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg-light);
+    border-top: 1px solid var(--border-light);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted-dark);
+    letter-spacing: 0.05em;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .info-block { position: static; }
+    .form-row { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">okiki.bello</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#skills">Stack</a></li>
+    <li><a href="index.html#writing">Writing</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- DARK HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-tag">Get in touch</p>
+    <h1>Let's <span>work</span><br />together.</h1>
+    <p class="hero-sub">Open to DevOps, SRE, and Cloud Engineering roles — remote or hybrid. Drop a message and I'll get back within 24 hours.</p>
+  </div>
+</div>
+
+<!-- GRADIENT DIVIDER -->
+<div class="divider"></div>
+
+<!-- LIGHT CONTACT BODY -->
+<div class="contact-body">
+  <div class="contact-inner">
+
+    <!-- LEFT INFO -->
+    <div class="info-block reveal">
+      <div class="info-label">Status</div>
+      <div class="avail-pill">
+        <span class="status-dot"></span>
+        Available for opportunities
+      </div>
+      <h2>Open to the right opportunity</h2>
+      <p>Particularly interested in high-reliability production environments where SRE practices, automation, and observability matter. Remote-first preferred.</p>
+
+      <div class="contact-links">
+        <a href="mailto:bellosamuel76@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span>bellosamuel76@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/okikioluwa-bello" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>okikioluwa-bello</span>
+        </a>
+        <a href="https://github.com/okiki-bello" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">GitHub</span>
+          <span>okiki-bello</span>
+        </a>
+        <a href="https://medium.com/@bellookiki" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">Blog</span>
+          <span>medium.com/@bellookiki</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-card reveal" style="transition-delay:0.15s;">
+      <div class="form-header">
+        <span>new_message.sh</span>
+        <div class="form-header-dots">
+          <span class="fdot fdot-g"></span>
+          <span class="fdot fdot-r"></span>
+          <span class="fdot fdot-y"></span>
+        </div>
+      </div>
+
+      <form id="contact-form" action="https://formspree.io/f/meevdgjd" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Enquiry type</label>
+          <select id="subject" name="subject">
+            <option value="" disabled selected>Select an option…</option>
+            <option value="full-time">Full-time role</option>
+            <option value="contract">Contract / freelance</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about the role, project, or what you're building…" required></textarea>
+        </div>
+
+        <p class="form-note">I'll respond within 24 hours. For urgent enquiries, email directly at bellosamuel76@gmail.com</p>
+
+        <button type="submit" class="btn-submit">
+          <span>Send message</span>
+          <span>↗</span>
+        </button>
+      </form>
+
+      <!-- Success -->
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Message sent</div>
+        <div class="success-sub">Thanks — I'll be in touch within 24 hours.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>okikioluwa bello · <a href="index.html">back to portfolio</a> · built to be deployed</p>
+</footer>
+
+<script>
+  /* Scroll reveal */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* Form submit */
+  const form = document.getElementById('contact-form');
+  const successState = document.getElementById('success-state');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        successState.style.display = 'block';
+      } else {
+        btn.textContent = 'Failed — try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Failed — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
