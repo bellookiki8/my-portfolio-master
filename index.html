@@ -40,13 +40,36 @@
       --sans: 'DM Sans', sans-serif;
     }
 
-    /* Light body */
+    /* ── DARK / LIGHT THEME OVERRIDE ── */
+    body.light-mode {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --surface2: #eef0f4;
+      --border: rgba(0,0,0,0.08);
+      --border2: rgba(0,0,0,0.14);
+      --text: #1a1e28;
+      --muted: #4a5068;
+    }
 
+    body.light-mode nav {
+      background: rgba(244,245,247,0.88);
+      border-bottom-color: rgba(0,0,0,0.08);
+    }
+
+    body.light-mode .terminal {
+      background: #1a1e28;
+    }
+
+    body.light-mode .stats-bar {
+      background: #ffffff;
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    /* Light body */
     .stats-bar~section .skills-grid,
     .stats-bar~section .stack-grid,
     .stats-bar~section .writing-grid {
       background: var(--border-light);
-      /* now gap shows as light grey */
       border-color: var(--border-light);
     }
 
@@ -95,9 +118,23 @@
       color: var(--muted-dark);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    .stats-bar~section .skill-card h3 { color: var(--text-dark); }
+    .stats-bar~section .skill-card p  { color: var(--muted-dark); }
+    .stats-bar~section .stack-name    { color: var(--text-dark); }
+    .stats-bar~section .stack-cat     { color: var(--muted-dark); }
+    .stats-bar~section .cert-name     { color: var(--text-dark); }
+    .stats-bar~section .cert-issuer   { color: var(--muted-dark); }
+    .stats-bar~section .contact-link  { color: var(--text-dark); }
+    .stats-bar~section .contact-link-label { color: var(--accent); }
+    .stats-bar~section .contact-info p { color: var(--muted-dark); }
+    .stats-bar~section .avail-label   { color: var(--accent); }
+    .stats-bar~section .avail-text,
+    .stats-bar~section .avail-list li { color: var(--muted-dark); }
+    .stats-bar~section .tag           { color: var(--muted-dark); background: #eef0f4; border-color: var(--border-light); }
+
+    footer { background: var(--bg-light); color: var(--muted-dark); }
+
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -111,9 +148,7 @@
     /* NAV */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       background: rgba(13, 15, 20, 0.85);
       backdrop-filter: blur(12px);
@@ -148,9 +183,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     /* HERO */
     .hero {
@@ -201,10 +234,7 @@
       color: var(--text);
     }
 
-    h1 span {
-      color: var(--accent);
-      font-weight: 500;
-    }
+    h1 span { color: var(--accent); font-weight: 500; }
 
     .hero-desc {
       font-size: 16px;
@@ -235,9 +265,7 @@
       transition: opacity 0.2s;
     }
 
-    .btn-primary:hover {
-      opacity: 0.85;
-    }
+    .btn-primary:hover { opacity: 0.85; }
 
     .btn-outline {
       background: transparent;
@@ -254,10 +282,7 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
     /* TERMINAL CARD */
     .terminal {
@@ -277,23 +302,10 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .dot-r {
-      background: #ff5f57;
-    }
-
-    .dot-y {
-      background: #ffbd2e;
-    }
-
-    .dot-g {
-      background: #28c941;
-    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #28c941; }
 
     .terminal-title {
       flex: 1;
@@ -309,36 +321,13 @@
       line-height: 2;
     }
 
-    .t-line {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .t-prompt {
-      color: var(--accent);
-      user-select: none;
-    }
-
-    .t-cmd {
-      color: var(--text);
-    }
-
-    .t-out {
-      color: var(--muted);
-      padding-left: 1.2rem;
-    }
-
-    .t-green {
-      color: var(--accent);
-    }
-
-    .t-blue {
-      color: var(--accent2);
-    }
-
-    .t-orange {
-      color: var(--accent3);
-    }
+    .t-line { display: flex; gap: 0.5rem; }
+    .t-prompt { color: var(--accent); user-select: none; }
+    .t-cmd { color: var(--text); }
+    .t-out { color: var(--muted); padding-left: 1.2rem; }
+    .t-green { color: var(--accent); }
+    .t-blue { color: var(--accent2); }
+    .t-orange { color: var(--accent3); }
 
     /* STATS BAR */
     .stats-bar {
@@ -421,9 +410,7 @@
       transition: background 0.2s;
     }
 
-    .skill-card:hover {
-      background: var(--surface);
-    }
+    .skill-card:hover { background: var(--surface); }
 
     .skill-icon {
       font-family: var(--mono);
@@ -477,11 +464,7 @@
     }
 
     /* EXPERIENCE */
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
 
     .exp-item {
       display: grid;
@@ -492,13 +475,9 @@
       position: relative;
     }
 
-    .exp-item:first-child {
-      border-top: 1px solid var(--border);
-    }
+    .exp-item:first-child { border-top: 1px solid var(--border); }
 
-    .exp-meta {
-      padding-top: 3px;
-    }
+    .exp-meta { padding-top: 3px; }
 
     .exp-period {
       font-family: var(--mono);
@@ -508,11 +487,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .exp-company {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 300;
-    }
+    .exp-company { font-size: 13px; color: var(--muted); font-weight: 300; }
 
     .exp-title {
       font-size: 16px;
@@ -540,12 +515,7 @@
       font-weight: 300;
     }
 
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 
     .exp-bullets li {
       font-size: 13px;
@@ -581,9 +551,7 @@
       transition: background 0.2s, transform 0.2s;
     }
 
-    .stack-item:hover {
-      background: var(--surface);
-    }
+    .stack-item:hover { background: var(--surface); }
 
     .stack-name {
       font-family: var(--mono);
@@ -592,9 +560,111 @@
       letter-spacing: 0.03em;
     }
 
-    .stack-cat {
-      font-size: 11px;
+    .stack-cat { font-size: 11px; color: var(--muted-dark); }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border-light);
+      border: 1px solid var(--border-light);
+    }
+
+    .project-card {
+      background: var(--surface-light);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.3s ease;
+    }
+
+    .project-card:hover::before { height: 100%; }
+    .project-card:hover { background: #f0faf8; }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+
+    .project-card:hover .project-title { color: var(--accent); }
+
+    .project-desc {
+      font-size: 13px;
       color: var(--muted-dark);
+      line-height: 1.7;
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      background: #eef0f4;
+      color: var(--muted-dark);
+      border: 1px solid var(--border-light);
+      letter-spacing: 0.04em;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-light);
+      margin-top: auto;
+    }
+
+    .project-link-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-arrow {
+      font-size: 16px;
+      color: var(--muted-dark);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover .project-arrow {
+      color: var(--accent);
+      transform: translate(3px, -3px);
     }
 
     /* CONTACT */
@@ -613,11 +683,7 @@
       line-height: 1.8;
     }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .contact-link {
       display: flex;
@@ -632,9 +698,7 @@
       transition: border-color 0.2s;
     }
 
-    .contact-link:hover {
-      border-color: var(--accent);
-    }
+    .contact-link:hover { border-color: var(--accent); }
 
     .contact-link-label {
       font-family: var(--mono);
@@ -651,31 +715,18 @@
       padding: 2rem;
     }
 
-    .avail-status {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
+    .avail-status { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
 
     .status-dot {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--accent);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.3;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     .avail-label {
@@ -686,12 +737,7 @@
       text-transform: uppercase;
     }
 
-    .avail-text {
-      font-size: 14px;
-      color: var(--muted-dark);
-      line-height: 1.8;
-      font-weight: 300;
-    }
+    .avail-text { font-size: 14px; color: var(--muted-dark); line-height: 1.8; font-weight: 300; }
 
     .avail-list {
       list-style: none;
@@ -709,12 +755,7 @@
       position: relative;
     }
 
-    .avail-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
+    .avail-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); }
 
     /* FOOTER */
     footer {
@@ -745,13 +786,10 @@
       transition: border-color 0.2s;
     }
 
-    .cert-card:hover {
-      border-color: var(--accent);
-    }
+    .cert-card:hover { border-color: var(--accent); }
 
     .cert-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       background: rgba(0, 212, 168, 0.1);
       border: 1px solid rgba(0, 212, 168, 0.2);
       display: flex;
@@ -763,12 +801,7 @@
       color: var(--accent);
     }
 
-    .cert-name {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-dark);
-      margin-bottom: 0.2rem;
-    }
+    .cert-name { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 0.2rem; }
 
     .cert-issuer {
       font-family: var(--mono);
@@ -778,7 +811,7 @@
       letter-spacing: 0.06em;
     }
 
-    /* WRITING / MEDIUM */
+    /* WRITING */
     .writing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -798,13 +831,8 @@
       color: inherit;
     }
 
-    .post-card:hover {
-      background: var(--surface);
-    }
-
-    .post-card:hover .post-title {
-      color: var(--accent);
-    }
+    .post-card:hover { background: var(--surface); }
+    .post-card:hover .post-title { color: var(--accent); }
 
     .post-meta {
       display: flex;
@@ -817,20 +845,9 @@
       text-transform: uppercase;
     }
 
-    .post-meta-dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--muted);
-    }
+    .post-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
 
-    .post-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.45;
-      transition: color 0.2s;
-    }
+    .post-title { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.45; transition: color 0.2s; }
 
     .post-excerpt {
       font-size: 13px;
@@ -845,12 +862,7 @@
       overflow: hidden;
     }
 
-    .post-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: auto;
-    }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
 
     .post-tag {
       font-family: var(--mono);
@@ -870,16 +882,9 @@
       margin-top: 0.5rem;
     }
 
-    .post-card:hover .post-arrow {
-      color: var(--accent);
-      transform: translate(3px, -3px);
-    }
+    .post-card:hover .post-arrow { color: var(--accent); transform: translate(3px, -3px); }
 
-    .writing-footer {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: flex-end;
-    }
+    .writing-footer { margin-top: 1.5rem; display: flex; justify-content: flex-end; }
 
     .writing-state {
       text-align: center;
@@ -893,334 +898,166 @@
       border: 1px solid var(--border);
     }
 
-    .writing-state .state-icon {
-      display: block;
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-      opacity: 0.4;
+    .writing-state .state-icon { display: block; font-size: 1.5rem; margin-bottom: 0.75rem; opacity: 0.4; }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 5rem;
+      right: 1.5rem;
+      z-index: 200;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      color: #0d0f14;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
     }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .back-to-top:hover { opacity: 0.85; }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 200;
+      width: 40px;
+      height: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: border-color 0.2s, color 0.2s, background 0.3s;
+    }
+
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats-inner {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        padding: 0 1rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-      }
-
-      section {
-        padding: 3rem 1.25rem;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      section { padding: 3rem 1.25rem; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
 
-    /* =============================================
-     ANIMATIONS
-     ============================================= */
-
-    /* Hero entrance — existing */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    .hero-tag {
-      animation: fadeUp 0.6s ease both;
-    }
+    .hero-tag  { animation: fadeUp 0.6s ease both; }
+    h1         { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-desc { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-cta  { animation: fadeUp 0.6s 0.3s ease both; }
+    .terminal  { animation: fadeUp 0.6s 0.4s ease both; }
 
-    h1 {
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-
-    .hero-desc {
-      animation: fadeUp 0.6s 0.2s ease both;
-    }
-
-    .hero-cta {
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-
-    .terminal {
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-
-    /* Scroll-reveal: elements start hidden, JS adds .visible */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.55s ease, transform 0.55s ease;
     }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Staggered children inside a reveal-group */
-    .reveal-group>* {
+    .reveal-group > * {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.45s ease, transform 0.45s ease;
     }
+    .reveal-group.visible > *:nth-child(1)  { opacity:1; transform:none; transition-delay:0.05s; }
+    .reveal-group.visible > *:nth-child(2)  { opacity:1; transform:none; transition-delay:0.12s; }
+    .reveal-group.visible > *:nth-child(3)  { opacity:1; transform:none; transition-delay:0.19s; }
+    .reveal-group.visible > *:nth-child(4)  { opacity:1; transform:none; transition-delay:0.26s; }
+    .reveal-group.visible > *:nth-child(5)  { opacity:1; transform:none; transition-delay:0.33s; }
+    .reveal-group.visible > *:nth-child(6)  { opacity:1; transform:none; transition-delay:0.40s; }
+    .reveal-group.visible > *:nth-child(n+7){ opacity:1; transform:none; transition-delay:0.47s; }
 
-    .reveal-group.visible>*:nth-child(1) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.05s;
-    }
-
-    .reveal-group.visible>*:nth-child(2) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.12s;
-    }
-
-    .reveal-group.visible>*:nth-child(3) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.19s;
-    }
-
-    .reveal-group.visible>*:nth-child(4) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.26s;
-    }
-
-    .reveal-group.visible>*:nth-child(5) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.33s;
-    }
-
-    .reveal-group.visible>*:nth-child(6) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.40s;
-    }
-
-    .reveal-group.visible>*:nth-child(7) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.47s;
-    }
-
-    .reveal-group.visible>*:nth-child(8) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.54s;
-    }
-
-    .reveal-group.visible>*:nth-child(n+9) {
-      opacity: 1;
-      transform: none;
-      transition-delay: 0.60s;
-    }
-
-    /* Stat counter glow-in */
     @keyframes glowIn {
-      from {
-        opacity: 0;
-        filter: blur(6px);
-        transform: scale(0.85);
-      }
-
-      to {
-        opacity: 1;
-        filter: blur(0);
-        transform: scale(1);
-      }
+      from { opacity:0; filter:blur(6px); transform:scale(0.85); }
+      to   { opacity:1; filter:blur(0);   transform:scale(1); }
     }
 
-    .stats-bar .stats-inner>div {
-      opacity: 0;
-      animation: none;
-    }
+    .stats-bar .stats-inner > div { opacity:0; animation:none; }
+    .stats-bar.visible .stats-inner > div:nth-child(1) { animation:glowIn 0.5s 0.0s ease forwards; }
+    .stats-bar.visible .stats-inner > div:nth-child(2) { animation:glowIn 0.5s 0.1s ease forwards; }
+    .stats-bar.visible .stats-inner > div:nth-child(3) { animation:glowIn 0.5s 0.2s ease forwards; }
+    .stats-bar.visible .stats-inner > div:nth-child(4) { animation:glowIn 0.5s 0.3s ease forwards; }
 
-    .stats-bar.visible .stats-inner>div:nth-child(1) {
-      animation: glowIn 0.5s 0.0s ease forwards;
-    }
-
-    .stats-bar.visible .stats-inner>div:nth-child(2) {
-      animation: glowIn 0.5s 0.1s ease forwards;
-    }
-
-    .stats-bar.visible .stats-inner>div:nth-child(3) {
-      animation: glowIn 0.5s 0.2s ease forwards;
-    }
-
-    .stats-bar.visible .stats-inner>div:nth-child(4) {
-      animation: glowIn 0.5s 0.3s ease forwards;
-    }
-
-    /* Stack item pop-in */
     .stack-item {
-      opacity: 0;
-      transform: scale(0.94);
-      transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s;
+      opacity:0;
+      transform:scale(0.94);
+      transition:opacity 0.35s ease, transform 0.35s ease, background 0.2s;
     }
+    .stack-grid.visible .stack-item { opacity:1; transform:scale(1); }
+    .stack-grid.visible .stack-item:nth-child(1)  { transition-delay:0.02s; }
+    .stack-grid.visible .stack-item:nth-child(2)  { transition-delay:0.05s; }
+    .stack-grid.visible .stack-item:nth-child(3)  { transition-delay:0.08s; }
+    .stack-grid.visible .stack-item:nth-child(4)  { transition-delay:0.11s; }
+    .stack-grid.visible .stack-item:nth-child(5)  { transition-delay:0.14s; }
+    .stack-grid.visible .stack-item:nth-child(6)  { transition-delay:0.17s; }
+    .stack-grid.visible .stack-item:nth-child(7)  { transition-delay:0.20s; }
+    .stack-grid.visible .stack-item:nth-child(8)  { transition-delay:0.23s; }
+    .stack-grid.visible .stack-item:nth-child(9)  { transition-delay:0.26s; }
+    .stack-grid.visible .stack-item:nth-child(10) { transition-delay:0.29s; }
+    .stack-grid.visible .stack-item:nth-child(11) { transition-delay:0.32s; }
+    .stack-grid.visible .stack-item:nth-child(12) { transition-delay:0.35s; }
+    .stack-grid.visible .stack-item:nth-child(13) { transition-delay:0.38s; }
+    .stack-grid.visible .stack-item:nth-child(14) { transition-delay:0.40s; }
+    .stack-grid.visible .stack-item:nth-child(15) { transition-delay:0.42s; }
+    .stack-grid.visible .stack-item:nth-child(16) { transition-delay:0.44s; }
+    .stack-grid.visible .stack-item:nth-child(17) { transition-delay:0.46s; }
+    .stack-grid.visible .stack-item:nth-child(18) { transition-delay:0.48s; }
+    .stack-grid.visible .stack-item:nth-child(19) { transition-delay:0.50s; }
+    .stack-grid.visible .stack-item:nth-child(20) { transition-delay:0.52s; }
+    .stack-grid.visible .stack-item:nth-child(n+21) { transition-delay:0.54s; }
 
-    .stack-grid.visible .stack-item {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Generate stagger delays for up to 30 stack items */
-    .stack-grid.visible .stack-item:nth-child(1) {
-      transition-delay: 0.02s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(2) {
-      transition-delay: 0.05s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(3) {
-      transition-delay: 0.08s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(4) {
-      transition-delay: 0.11s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(5) {
-      transition-delay: 0.14s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(6) {
-      transition-delay: 0.17s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(7) {
-      transition-delay: 0.20s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(8) {
-      transition-delay: 0.23s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(9) {
-      transition-delay: 0.26s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(10) {
-      transition-delay: 0.29s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(11) {
-      transition-delay: 0.32s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(12) {
-      transition-delay: 0.35s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(13) {
-      transition-delay: 0.38s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(14) {
-      transition-delay: 0.40s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(15) {
-      transition-delay: 0.42s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(16) {
-      transition-delay: 0.44s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(17) {
-      transition-delay: 0.46s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(18) {
-      transition-delay: 0.48s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(19) {
-      transition-delay: 0.50s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(20) {
-      transition-delay: 0.52s;
-    }
-
-    .stack-grid.visible .stack-item:nth-child(n+21) {
-      transition-delay: 0.54s;
-    }
-
-    /* Accent underline sweep on section headings */
-    .section-header h2 {
-      position: relative;
-    }
-
+    .section-header h2 { position:relative; }
     .section-header h2::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.6s ease;
+      content:'';
+      position:absolute;
+      bottom:-4px; left:0;
+      width:0; height:1px;
+      background:var(--accent);
+      transition:width 0.6s ease;
     }
+    .section-header.visible h2::after { width:100%; }
 
-    .section-header.visible h2::after {
-      width: 100%;
-    }
+    .nav-links a.active { color:var(--accent); }
 
-    /* Nav link active indicator */
-    .nav-links a.active {
-      color: var(--accent);
-    }
-
-    /* Cursor blink on terminal */
     @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
+      0%,100% { opacity:1; }
+      50%      { opacity:0; }
     }
-
     .t-cursor {
-      display: inline-block;
-      width: 7px;
-      height: 13px;
-      background: var(--accent);
-      vertical-align: middle;
-      margin-left: 2px;
-      animation: blink 1s step-end infinite;
+      display:inline-block;
+      width:7px; height:13px;
+      background:var(--accent);
+      vertical-align:middle;
+      margin-left:2px;
+      animation:blink 1s step-end infinite;
     }
   </style>
 </head>
@@ -1234,6 +1071,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -1266,16 +1104,13 @@
           <div class="terminal-body">
             <div class="t-line"><span class="t-prompt">›</span><span class="t-cmd">whoami</span></div>
             <div class="t-out t-green">okikioluwa bello // devops &amp; sre engineer</div>
-            <div class="t-line" style="margin-top:8px;"><span class="t-prompt">›</span><span class="t-cmd">kubectl get
-                deployments --all-namespaces</span></div>
+            <div class="t-line" style="margin-top:8px;"><span class="t-prompt">›</span><span class="t-cmd">kubectl get deployments --all-namespaces</span></div>
             <div class="t-out"><span class="t-green">RUNNING</span> azure-monitor 5/5</div>
             <div class="t-out"><span class="t-green">RUNNING</span> ci-cd-pipelines 3/3</div>
             <div class="t-out"><span class="t-green">RUNNING</span> terraform-iac 8/8</div>
             <div class="t-out"><span class="t-green">RUNNING</span> incident-response 1/1</div>
-            <div class="t-line" style="margin-top:8px;"><span class="t-prompt">›</span><span class="t-cmd">uptime<span
-                  class="t-cursor"></span></span></div>
-            <div class="t-out"><span class="t-blue">5 years</span> · <span class="t-orange">99.9% SLA</span> · Lagos, NG
-            </div>
+            <div class="t-line" style="margin-top:8px;"><span class="t-prompt">›</span><span class="t-cmd">uptime<span class="t-cursor"></span></span></div>
+            <div class="t-out"><span class="t-blue">5 years</span> · <span class="t-orange">Azure · AWS · SRE</span> · Lagos, NG</div>
           </div>
         </div>
       </div>
@@ -1285,22 +1120,10 @@
   <!-- STATS -->
   <div class="stats-bar">
     <div class="stats-inner">
-      <div>
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div>
-        <span class="stat-num">2</span>
-        <span class="stat-label">Cloud Platforms</span>
-      </div>
-      <div>
-        <span class="stat-num">L3</span>
-        <span class="stat-label">Technical Lead</span>
-      </div>
-      <div>
-        <span class="stat-num">20+</span>
-        <span class="stat-label">Engineers Mentored</span>
-      </div>
+      <div><span class="stat-num">5+</span><span class="stat-label">Years Experience</span></div>
+      <div><span class="stat-num">2</span><span class="stat-label">Cloud Platforms</span></div>
+      <div><span class="stat-num">L3</span><span class="stat-label">Technical Lead</span></div>
+      <div><span class="stat-num">20+</span><span class="stat-label">Engineers Mentored</span></div>
     </div>
   </div>
 
@@ -1315,8 +1138,7 @@
       <div class="skill-card">
         <div class="skill-icon">Cloud Infra</div>
         <h3>Azure &amp; AWS Operations</h3>
-        <p>Manage and monitor production cloud infrastructure across Azure and AWS, ensuring high availability and rapid
-          incident recovery.</p>
+        <p>Manage and monitor production cloud infrastructure across Azure and AWS, ensuring high availability and rapid incident recovery.</p>
         <div class="tags">
           <span class="tag">Azure PaaS/IaaS</span>
           <span class="tag">EC2 / S3 / VPC</span>
@@ -1326,8 +1148,7 @@
       <div class="skill-card">
         <div class="skill-icon">CI/CD</div>
         <h3>Pipeline Automation</h3>
-        <p>Design and maintain CI/CD pipelines using Azure DevOps and GitHub Actions — automating build, test, and
-          deployment cycles end-to-end.</p>
+        <p>Design and maintain CI/CD pipelines using Azure DevOps and GitHub Actions — automating build, test, and deployment cycles end-to-end.</p>
         <div class="tags">
           <span class="tag">Azure DevOps</span>
           <span class="tag">GitHub Actions</span>
@@ -1338,8 +1159,7 @@
       <div class="skill-card">
         <div class="skill-icon">IaC</div>
         <h3>Infrastructure as Code</h3>
-        <p>Provision and manage repeatable, version-controlled environments using Terraform and ARM templates, reducing
-          configuration drift.</p>
+        <p>Provision and manage repeatable, version-controlled environments using Terraform and ARM templates, reducing configuration drift.</p>
         <div class="tags">
           <span class="tag">Terraform</span>
           <span class="tag">Ansible</span>
@@ -1349,8 +1169,7 @@
       <div class="skill-card">
         <div class="skill-icon">Observability</div>
         <h3>Monitoring &amp; Alerting</h3>
-        <p>Implement proactive alerting and log aggregation via Azure Monitor, Log Analytics, Application Insights, and
-          AWS CloudWatch.</p>
+        <p>Implement proactive alerting and log aggregation via Azure Monitor, Log Analytics, Application Insights, and AWS CloudWatch.</p>
         <div class="tags">
           <span class="tag">Azure Monitor</span>
           <span class="tag">App Insights</span>
@@ -1360,8 +1179,7 @@
       <div class="skill-card">
         <div class="skill-icon">SRE</div>
         <h3>Incident &amp; Reliability</h3>
-        <p>Lead incident detection, RCA, structured escalation, and disaster recovery planning within defined RTO and
-          RPO objectives.</p>
+        <p>Lead incident detection, RCA, structured escalation, and disaster recovery planning within defined RTO and RPO objectives.</p>
         <div class="tags">
           <span class="tag">Incident Response</span>
           <span class="tag">RCA</span>
@@ -1371,8 +1189,7 @@
       <div class="skill-card">
         <div class="skill-icon">Containers</div>
         <h3>Docker &amp; Kubernetes</h3>
-        <p>Manage containerised workloads in cloud environments — overseeing deployments, scaling configs, and health
-          checks for production apps.</p>
+        <p>Manage containerised workloads in cloud environments — overseeing deployments, scaling configs, and health checks for production apps.</p>
         <div class="tags">
           <span class="tag">Docker</span>
           <span class="tag">Kubernetes</span>
@@ -1400,16 +1217,11 @@
           <div class="exp-title">DevOps Engineer</div>
           <div class="exp-role-tag">Current Role</div>
           <ul class="exp-bullets">
-            <li>Manages and monitors cloud infrastructure across Azure and AWS, ensuring high availability and prompt
-              incident detection and recovery.</li>
-            <li>Implements and maintains CI/CD pipelines using Azure DevOps and GitHub Actions, continuously improving
-              deployment reliability.</li>
-            <li>Automates operations using Terraform, Ansible, PowerShell, and Bash, reducing manual workload and
-              improving consistency.</li>
-            <li>Manages log aggregation via Azure Monitor and Log Analytics — logs visualised, archived to blob storage,
-              and accessible for incident analysis.</li>
-            <li>Maintains disaster recovery plans with periodic reviews ensuring business continuity within defined
-              RTO/RPO.</li>
+            <li>Manages and monitors cloud infrastructure across Azure and AWS, ensuring high availability and prompt incident detection and recovery.</li>
+            <li>Implements and maintains CI/CD pipelines using Azure DevOps and GitHub Actions, continuously improving deployment reliability.</li>
+            <li>Automates operations using Terraform, Ansible, PowerShell, and Bash, reducing manual workload and improving consistency.</li>
+            <li>Manages log aggregation via Azure Monitor and Log Analytics — logs visualised, archived to blob storage, and accessible for incident analysis.</li>
+            <li>Maintains disaster recovery plans with periodic reviews ensuring business continuity within defined RTO/RPO.</li>
           </ul>
         </div>
       </div>
@@ -1423,16 +1235,11 @@
           <div class="exp-title">L3 Technical Lead — Azure Cloud Support</div>
           <div class="exp-role-tag">Promoted from L2</div>
           <ul class="exp-bullets">
-            <li>Primary technical authority for service incident detection and resolution across Azure PaaS: API
-              Management, ARM, Azure Policy, Azure Batch.</li>
-            <li>Implements cloud security and compliance controls — RBAC, Key Vault access policies, Azure Policy
-              definitions.</li>
-            <li>Leads cloud cost optimisation through Azure Cost Management analysis, identifying underutilised
-              resources for measurable savings.</li>
-            <li>Mentors 15+ L2 engineers on Azure operations, automation scripting, monitoring tooling, and incident
-              response best practices.</li>
-            <li>Produces clear incident reports for stakeholders — impact assessments, timelines, and corrective action
-              plans.</li>
+            <li>Primary technical authority for service incident detection and resolution across Azure PaaS: API Management, ARM, Azure Policy, Azure Batch.</li>
+            <li>Implements cloud security and compliance controls — RBAC, Key Vault access policies, Azure Policy definitions.</li>
+            <li>Leads cloud cost optimisation through Azure Cost Management analysis, identifying underutilised resources for measurable savings.</li>
+            <li>Mentors 15+ L2 engineers on Azure operations, automation scripting, monitoring tooling, and incident response best practices.</li>
+            <li>Produces clear incident reports for stakeholders — impact assessments, timelines, and corrective action plans.</li>
           </ul>
         </div>
       </div>
@@ -1446,11 +1253,9 @@
           <div class="exp-title">L2 Azure Cloud Support Engineer</div>
           <div class="exp-role-tag">Second-Level Support</div>
           <ul class="exp-bullets">
-            <li>Provisioned and managed Azure resources including VMs, VNets, Storage Accounts, App Services, and Azure
-              SQL using Terraform and ARM templates.</li>
+            <li>Provisioned and managed Azure resources including VMs, VNets, Storage Accounts, App Services, and Azure SQL using Terraform and ARM templates.</li>
             <li>Automated cloud operations and reporting using PowerShell, Bash, Azure CLI, and REST APIs.</li>
-            <li>Monitored infrastructure health via Azure Monitor, Application Insights, and Log Analytics — proactively
-              resolving bottlenecks before user impact.</li>
+            <li>Monitored infrastructure health via Azure Monitor, Application Insights, and Log Analytics — proactively resolving bottlenecks before user impact.</li>
             <li>Managed containerised workloads using Docker and Kubernetes across cloud environments.</li>
             <li>Built and maintained CI/CD pipelines in Azure DevOps with YAML configurations.</li>
           </ul>
@@ -1466,10 +1271,8 @@
           <div class="exp-title">Azure Cloud &amp; DevOps Trainer</div>
           <div class="exp-role-tag">Volunteer</div>
           <ul class="exp-bullets">
-            <li>Designed and delivered hands-on training in Azure cloud operations, CI/CD pipelines, Terraform/ARM IaC,
-              monitoring, and SRE best practices.</li>
-            <li>Prepared candidates for AZ-900 and AZ-104 Azure certifications; developed lab exercises and operational
-              runbooks.</li>
+            <li>Designed and delivered hands-on training in Azure cloud operations, CI/CD pipelines, Terraform/ARM IaC, monitoring, and SRE best practices.</li>
+            <li>Prepared candidates for AZ-900 and AZ-104 Azure certifications; developed lab exercises and operational runbooks.</li>
           </ul>
         </div>
       </div>
@@ -1485,42 +1288,32 @@
       <div class="section-line"></div>
     </div>
     <div class="stack-grid">
-      <div class="stack-item"><span class="stack-name">Microsoft Azure</span><span class="stack-cat">Cloud
-          Platform</span></div>
+      <div class="stack-item"><span class="stack-name">Microsoft Azure</span><span class="stack-cat">Cloud Platform</span></div>
       <div class="stack-item"><span class="stack-name">AWS</span><span class="stack-cat">Cloud Platform</span></div>
       <div class="stack-item"><span class="stack-name">Terraform</span><span class="stack-cat">IaC</span></div>
       <div class="stack-item"><span class="stack-name">Ansible</span><span class="stack-cat">Configuration</span></div>
       <div class="stack-item"><span class="stack-name">Docker</span><span class="stack-cat">Containers</span></div>
-      <div class="stack-item"><span class="stack-name">Kubernetes</span><span class="stack-cat">Orchestration</span>
-      </div>
+      <div class="stack-item"><span class="stack-name">Kubernetes</span><span class="stack-cat">Orchestration</span></div>
       <div class="stack-item"><span class="stack-name">Azure DevOps</span><span class="stack-cat">CI/CD</span></div>
       <div class="stack-item"><span class="stack-name">GitHub Actions</span><span class="stack-cat">CI/CD</span></div>
-      <div class="stack-item"><span class="stack-name">Azure Monitor</span><span class="stack-cat">Observability</span>
-      </div>
-      <div class="stack-item"><span class="stack-name">Log Analytics</span><span class="stack-cat">Observability</span>
-      </div>
-      <div class="stack-item"><span class="stack-name">App Insights</span><span class="stack-cat">Observability</span>
-      </div>
-      <div class="stack-item"><span class="stack-name">CloudWatch</span><span class="stack-cat">Observability</span>
-      </div>
+      <div class="stack-item"><span class="stack-name">Azure Monitor</span><span class="stack-cat">Observability</span></div>
+      <div class="stack-item"><span class="stack-name">Log Analytics</span><span class="stack-cat">Observability</span></div>
+      <div class="stack-item"><span class="stack-name">App Insights</span><span class="stack-cat">Observability</span></div>
+      <div class="stack-item"><span class="stack-name">CloudWatch</span><span class="stack-cat">Observability</span></div>
       <div class="stack-item"><span class="stack-name">PowerShell</span><span class="stack-cat">Scripting</span></div>
       <div class="stack-item"><span class="stack-name">Bash</span><span class="stack-cat">Scripting</span></div>
       <div class="stack-item"><span class="stack-name">Python</span><span class="stack-cat">Scripting</span></div>
       <div class="stack-item"><span class="stack-name">ARM Templates</span><span class="stack-cat">IaC</span></div>
       <div class="stack-item"><span class="stack-name">RBAC / IAM</span><span class="stack-cat">Security</span></div>
-      <div class="stack-item"><span class="stack-name">Azure Policy</span><span class="stack-cat">Governance</span>
-      </div>
+      <div class="stack-item"><span class="stack-name">Azure Policy</span><span class="stack-cat">Governance</span></div>
       <div class="stack-item"><span class="stack-name">Linux (RHEL/Ubuntu)</span><span class="stack-cat">OS</span></div>
       <div class="stack-item"><span class="stack-name">Git</span><span class="stack-cat">Version Control</span></div>
       <div class="stack-item"><span class="stack-name">Jira</span><span class="stack-cat">Project Tracking</span></div>
       <div class="stack-item"><span class="stack-name">Grafana</span><span class="stack-cat">Observability</span></div>
-      <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-cat">Observability</span>
-      </div>
+      <div class="stack-item"><span class="stack-name">Prometheus</span><span class="stack-cat">Observability</span></div>
       <div class="stack-item"><span class="stack-name">Helm</span><span class="stack-cat">Kubernetes</span></div>
-      <div class="stack-item"><span class="stack-name">Azure Key Vault</span><span class="stack-cat">Security</span>
-      </div>
-      <div class="stack-item"><span class="stack-name">Confluence</span><span class="stack-cat">Documentation</span>
-      </div>
+      <div class="stack-item"><span class="stack-name">Azure Key Vault</span><span class="stack-cat">Security</span></div>
+      <div class="stack-item"><span class="stack-name">Confluence</span><span class="stack-cat">Documentation</span></div>
     </div>
   </section>
 
@@ -1563,10 +1356,71 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2>Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid reveal-group">
+
+      <a class="project-card" href="https://medium.com/@bellookiki/from-zero-to-production-how-i-containerised-and-deployed-a-full-stack-app-on-azure-using-docker-a887b7e5991e" target="_blank" rel="noopener">
+        <div class="project-num">Project 01</div>
+        <div class="project-title">Full-Stack App Containerisation &amp; Azure Deployment</div>
+        <div class="project-desc">Containerised a full-stack application end-to-end using Docker and deployed it to Azure — covering image builds, registry push, App Service configuration, and production readiness checks.</div>
+        <div class="project-tags">
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">Azure App Service</span>
+          <span class="project-tag">Azure Container Registry</span>
+          <span class="project-tag">CI/CD</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link-label">Read on Medium</span>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://medium.com/@bellookiki/from-code-to-cloud-deploying-epicbook-on-azure-with-two-pipelines-terraform-and-ansible-5850e30db937" target="_blank" rel="noopener">
+        <div class="project-num">Project 02</div>
+        <div class="project-title">EpicBook — Azure Deployment with Dual Pipelines, Terraform &amp; Ansible</div>
+        <div class="project-desc">Deployed EpicBook to Azure using two separate CI/CD pipelines — one for infrastructure provisioning via Terraform and one for application deployment via Ansible — simulating a real-world multi-team workflow.</div>
+        <div class="project-tags">
+          <span class="project-tag">Terraform</span>
+          <span class="project-tag">Ansible</span>
+          <span class="project-tag">Azure DevOps</span>
+          <span class="project-tag">Azure</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link-label">Read on Medium</span>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://medium.com/@bellookiki/building-a-production-style-3-tier-application-on-azure-using-terraform-75dea0b0bac6" target="_blank" rel="noopener">
+        <div class="project-num">Project 03</div>
+        <div class="project-title">Production-Style 3-Tier Application on Azure with Terraform</div>
+        <div class="project-desc">Designed and provisioned a production-grade 3-tier architecture on Azure — web, application, and data tiers — using Terraform modules, NSGs, load balancers, and Azure SQL, following cloud architecture best practices.</div>
+        <div class="project-tags">
+          <span class="project-tag">Terraform</span>
+          <span class="project-tag">Azure</span>
+          <span class="project-tag">Architecture</span>
+          <span class="project-tag">Azure SQL</span>
+          <span class="project-tag">Networking</span>
+        </div>
+        <div class="project-footer">
+          <span class="project-link-label">Read on Medium</span>
+          <span class="project-arrow">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- WRITING -->
   <section id="writing">
     <div class="section-header reveal">
-      <span class="section-num">05</span>
+      <span class="section-num">06</span>
       <h2>Writing</h2>
       <div class="section-line"></div>
     </div>
@@ -1577,22 +1431,20 @@
       </div>
     </div>
     <div class="writing-footer reveal">
-      <a href="https://medium.com/@bellookiki" id="medium-all-link" target="_blank" rel="noopener"
-        class="btn-outline">View all on Medium →</a>
+      <a href="https://medium.com/@bellookiki" id="medium-all-link" target="_blank" rel="noopener" class="btn-outline">View all on Medium →</a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-header reveal">
-      <span class="section-num">06</span>
+      <span class="section-num">07</span>
       <h2>Get in touch</h2>
       <div class="section-line"></div>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <p>Open to DevOps, SRE, and Cloud Engineering roles — remote or hybrid. Particularly interested in
-          high-reliability production environments where SRE practices, automation, and observability matter.</p>
+        <p>Open to DevOps, SRE, and Cloud Engineering roles — remote or hybrid. Particularly interested in high-reliability production environments where SRE practices, automation, and observability matter.</p>
         <div class="contact-links">
           <a href="mailto:bellosamuel76@gmail.com" class="contact-link">
             <span class="contact-link-label">Email</span>
@@ -1632,14 +1484,17 @@
     <p>okikioluwa bello · devops &amp; cloud engineer · built to be deployed</p>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+
   <script>
-    /* ── SCROLL REVEAL ───────────────────────────────────────── */
+    /* ── SCROLL REVEAL ── */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // stats bar and stack grid handled separately
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
 
@@ -1647,7 +1502,7 @@
       observer.observe(el);
     });
 
-    /* ── ACTIVE NAV LINK ─────────────────────────────────────── */
+    /* ── ACTIVE NAV LINK ── */
     const sections = document.querySelectorAll('section[id], div[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     const navObserver = new IntersectionObserver((entries) => {
@@ -1661,12 +1516,38 @@
     }, { threshold: 0.4 });
     sections.forEach(s => navObserver.observe(s));
 
-    /* ── MEDIUM RSS FETCH ────────────────────────────────────── */
+    /* ── BACK TO TOP ── */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── DARK / LIGHT TOGGLE ── */
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+      themeToggle.textContent = '☾';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-mode');
+      themeToggle.textContent = isLight ? '☾' : '☀';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    /* ── MEDIUM RSS FETCH ── */
     const MEDIUM_USERNAME = 'bellookiki';
     const MAX_POSTS = 6;
-
-    const RSS_URL = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
-    const RJ_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=${MAX_POSTS}`;
+    const RSS_URL   = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
+    const RJ_URL    = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=${MAX_POSTS}`;
     const PROXY_URL = `https://corsproxy.io/?${encodeURIComponent(RSS_URL)}`;
 
     const FALLBACK_POSTS = [
@@ -1701,44 +1582,43 @@
       const grid = document.createElement('div');
       grid.className = 'writing-grid reveal-group';
       items.slice(0, MAX_POSTS).forEach(item => {
-        const tags = (item.categories || item.tags || []).slice(0, 3);
+        const tags    = (item.categories || item.tags || []).slice(0, 3);
         const excerpt = item.description ? stripHtml(item.description).slice(0, 180).trim() + '…' : (item.excerpt || '');
-        const date = item.pubDate || item.date || '';
-        const rt = item.readTime || readingTime(item.content || item.description || '');
+        const date    = item.pubDate || item.date || '';
+        const rt      = item.readTime || readingTime(item.content || item.description || '');
         const card = document.createElement('a');
         card.className = 'post-card';
-        card.href = item.link || item.url;
-        card.target = '_blank';
-        card.rel = 'noopener';
+        card.href      = item.link || item.url;
+        card.target    = '_blank';
+        card.rel       = 'noopener';
         card.innerHTML = `
-        <div class="post-meta">
-          <span>${formatDate(date)}</span>
-          <span class="post-meta-dot"></span>
-          <span>${rt}</span>
-        </div>
-        <div class="post-title">${item.title}</div>
-        ${excerpt ? `<div class="post-excerpt">${excerpt}</div>` : ''}
-        ${tags.length ? `<div class="post-tags">${tags.map(t => `<span class="post-tag">${t}</span>`).join('')}</div>` : ''}
-        <span class="post-arrow">↗</span>
-      `;
+          <div class="post-meta">
+            <span>${formatDate(date)}</span>
+            <span class="post-meta-dot"></span>
+            <span>${rt}</span>
+          </div>
+          <div class="post-title">${item.title}</div>
+          ${excerpt ? `<div class="post-excerpt">${excerpt}</div>` : ''}
+          ${tags.length ? `<div class="post-tags">${tags.map(t => `<span class="post-tag">${t}</span>`).join('')}</div>` : ''}
+          <span class="post-arrow">↗</span>
+        `;
         grid.appendChild(card);
       });
       container.innerHTML = '';
       container.appendChild(grid);
-      // Trigger reveal animation on newly inserted grid
       requestAnimationFrame(() => observer.observe(grid));
     }
 
     function parseRssXml(xmlText) {
       const parser = new DOMParser();
-      const doc = parser.parseFromString(xmlText, 'text/xml');
+      const doc    = parser.parseFromString(xmlText, 'text/xml');
       return [...doc.querySelectorAll('item')].map(el => ({
-        title: el.querySelector('title')?.textContent || '',
-        link: el.querySelector('link')?.textContent || el.querySelector('guid')?.textContent || '',
-        pubDate: el.querySelector('pubDate')?.textContent || '',
+        title:       el.querySelector('title')?.textContent || '',
+        link:        el.querySelector('link')?.textContent || el.querySelector('guid')?.textContent || '',
+        pubDate:     el.querySelector('pubDate')?.textContent || '',
         description: el.querySelector('description')?.textContent || '',
-        content: el.querySelector('encoded')?.textContent || '',
-        categories: [...el.querySelectorAll('category')].map(c => c.textContent).slice(0, 3),
+        content:     el.querySelector('encoded')?.textContent || '',
+        categories:  [...el.querySelectorAll('category')].map(c => c.textContent).slice(0, 3),
       }));
     }
 
